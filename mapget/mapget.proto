@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package mapget;
+
+import "common/common.proto";
+
+message DownloadMapRequest {
+  common.Polygon map_area = 1;
+  common.MapType map_type = 2;
+  string language = 3;
+}
+
+message DownloadMapResponse {
+}
+
+service Mapget {
+
+  rpc DownloadMap (DownloadMapRequest) returns (DownloadMapResponse);
+
+}
